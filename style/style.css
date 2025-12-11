@@ -1,3 +1,4 @@
+/* Styles Généraux */
 * {
   margin: 0;
 }
@@ -85,7 +86,8 @@ nav a {
   margin-left: 30px;
 }
 
-/* Styles spécifiques à la page index */
+/* --- Styles spécifiques à la page index --- */
+
 .accueil-photos {
   background-color: white;
   padding: 80px;
@@ -169,7 +171,8 @@ input[type="submit"] {
   margin-top: 30px;
 }
 
-/* Styles spécifiques à la page à propos */
+/* --- Styles spécifiques à la page à propos --- */
+
 .carre-contenu {
   border-right: 1px solid #8e86b5;
   border-bottom: 1px solid #8e86b5;
@@ -217,7 +220,8 @@ td {
   padding: 80px;
 }
 
-/* Styles spécifiques à la page portfolio */
+/* --- Styles spécifiques à la page portfolio --- */
+
 .portfolio-section-photos {
   background-color: white;
 }
@@ -271,37 +275,101 @@ td {
   display: flex;
 }
 
-/* Media queries */
+/* --- Media Queries pour la Responsivité --- */
+
+/* Styles pour les écrans jusqu'à 996px (Tablettes et Mobiles) */
 @media screen and (max-width: 996px) {
-  header nav {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+    /* Styles de base Responsifs (Déjà dans votre fichier) */
+    header nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-  header nav img {
-    margin-bottom: 20px;
-  }
+    header nav img {
+        margin-bottom: 20px;
+    }
 
-  header,
-  footer {
-    padding: 20px 20px;
-  }
+    header,
+    footer {
+        padding: 20px 20px;
+    }
 
-  h1 {
-    font-size: 2em;
-  }
+    h1 {
+        font-size: 2em;
+    }
 
-  section {
-    padding: 50px 20px 50px 20px;
-  }
+    section {
+        padding: 50px 20px 50px 20px;
+    }
 
-  nav a {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+    nav a {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 
-  table {
-    display: none;
-  }
+    table {
+        display: none; /* Cache la table sur mobile */
+    }
+
+    /* --- AJOUTS POUR LA PAGE D'ACCUEIL (index.html) --- */
+    .accueil-introduction {
+        flex-direction: column; /* Empilement vertical (Texte + Image) */
+        align-items: center;
+        text-align: center;
+    }
+
+    .accueil-introduction div {
+        padding-right: 0; 
+        margin-bottom: 30px; 
+    }
+    
+    .accueil-introduction img {
+        width: 100%; 
+        max-width: 300px; 
+    }
+
+    .accueil-photos div {
+        flex-direction: column; /* Chaque ligne d'images s'empile */
+        gap: 0;
+        margin-bottom: 0;
+    }
+    
+    .accueil-photos img {
+        margin-bottom: 15px; 
+        width: 100%; 
+    }
+    
+    .nom-email {
+        flex-direction: column; /* Empiler les champs Nom et Email */
+        gap: 0;
+    }
+
+    /* --- AJOUTS POUR LA PAGE À PROPOS (a_propos.html) --- */
+    .carre-contenu,
+    .a-propos-main {
+        width: 100%; /* Le contenu prend toute la largeur */
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .carre-contenu {
+        border-right: none; /* Optionnel : simplifier la bordure */
+    }
+
+    /* --- AJOUTS POUR LA PAGE PORTFOLIO (portfolio.html) --- */
+    .grid-paysages {
+        grid-template-columns: 1fr; /* 1 colonne */
+        grid-template-rows: auto;   
+    }
+
+    .grid-portraits {
+        grid-template-columns: 1fr; /* 1 colonne */
+        grid-template-rows: auto;   
+    }
+    
+    .grid-paysages img,
+    .grid-portraits img {
+        height: auto; 
+    }
 }
